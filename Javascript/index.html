@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascrip Giriş</title>
+  </head>
+  <body>
+    <h1>Javascrip Giriş</h1>
+    <p>
+      Javascrip tarayıcılarda çalışabilen bir programlama dilidir. Javascrip
+      kodları
+      <script></script>
+      tag larının arasına yazılır.
+    </p>
+    <h2>Javascrip ile ekrana yazı yazdırma</h2>
+
+    <script>
+      document.write("Bu yazı Js write metoduyla yazıldı.");
+      document.writeln("<h2>Bu yazı Js writeln metoduyla yazıldı.</h2");
+      console.log(
+        "Bu yazı Js console.log metoduyla yazıldı.Bu yazı         ekrana değil tarayıcının console una yazdırılır."
+      );
+      //Javascrip ile değişken tanımlama
+      var urunAdi;
+      var urunFiyati = 18500;
+      var kategori = "Bilgisayar";
+      //Typescript : Microsoft tarafından geliştirilen kütüphane
+      urunAdi = "Monitör";
+      console.log("Ürün Adı:", urunAdi);
+      console.log("Ürün Fiyatı:", urunFiyati);
+      console.log("Ürün Kdv:", urunAdi);
+      console.log("Ürün Kategori:", kategori);
+
+      //Let ile değişken tanımlama
+
+      let isim;
+      let soyisim;
+      var meslek;
+      console.log("let : ", meslek);
+      isim = "Alp";
+      soyisim = "Arslan";
+      meslek = "Yazılımcı";
+      console.log(
+        "Kişi Bilgileri :",
+        isim + "" + soyisim + "-Mesleği :" + meslek
+      );
+
+      //Javascript Sabitler
+      //Baştan tanımladığımız bir değerin sonradan değiştirilmesi gerektiği durumlarda ullanılır.
+
+      const kdv = 18;
+      //kdvmik=18; const ile tanımlanan değer sonradan değiştirilemez.
+      console.log("Sabit değer :", kdvmik);
+      /*
+      çoklu yorum satırı
+      
+      */
+    </script>
+  </body>
+</html>

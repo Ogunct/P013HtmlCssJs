@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery Ve Javascript İle Css İşlemleri</title>
+    <script src="/jquery-3.6.3.min.js"></script>
+    <style>
+      .baslik {
+        color: red;
+        font-size: larger;
+      }
+      .sekil {
+        color: crimson;
+      }
+      .bord {
+        border: 1px solid;
+        min-height: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Jquery Ve Javascript İle Css İşlemleri</h1>
+    <hr />
+    <h3 id="jqilegizle">Bu elemet jquery ile gizlenecek</h3>
+    <hr />
+    <h3 id="jsilegizle">Bu element javascript ile gizlenecek</h3>
+    <hr />
+    <script>
+      $("#jqilegizle").hide();
+      document.getElementById("jsilegizle").style.display = "none";
+      // Elemetleri Gösterme
+      $("#jqilegizle").show();
+      document.getElementById("jsilegizle").style.display = "block";
+    </script>
+    <hr />
+    <h2>Elementlerin Csslerini Değiştirme</h2>
+    <div id="jqsekillendir" class="sekil test brd">
+      Elementlerin Csslerini Değiştirme
+    </div>
+    <div id="jssekillendir" class="jssekil test brd">
+      Elementlerin Csslerini Değiştirme
+    </div>
+    <script>
+      $("#jqsekillendir").css("font-size", "34px");
+      $("#jqsekillendir").css("padding", "34px");
+      //Class Eklem - Silme
+      $("he:first").addClass("baslik");
+      $("#jqsekillendir").addClass("jsclass deneme");
+      $("#jqsekillendir").removeClass("sekil");
+      // Js İle Css
+      document.getElementById("jssekillendir").style.color = "blue";
+      document.getElementById("jssekillendir").style.padding = "18px";
+      document.getElementById("jssekillendir").style.cmargin = "18px";
+      // Js İle Class Eklem-Silme
+      document.getElementById("jssekillendir").classList.add("sekil"); // EKLEME
+      document.getElementById("jssekillendir").classList.remove("sekil"); // SİLME
+    </script>
+  </body>
+</html>

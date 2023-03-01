@@ -1,0 +1,6 @@
+{
+  "editor.cursorBlinking": "blink",
+  "workbench.activityBar.iconClickBehavior": "toggle",
+  "workbench.colorTheme": "Default Dark+",
+  "liveServer.settings.port": 5501
+}

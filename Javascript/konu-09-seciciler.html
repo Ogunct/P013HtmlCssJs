@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript de Seçiciler</title>
+  </head>
+  <body>
+    <h1>Javascript de Seçiciler</h1>
+    <p>
+      Js de DOM(Document Object Model) yapısı sayesinde sayfadaki tüm
+      elementlere ulaşıp üzerindeki değişiklik yapabiliriz
+    </p>
+    <h2>Elementleri ID'ye Göre Seçme</h2>
+    <p id="mrbdny">Merhaba</p>
+    <p id="JsIdSeciciTest" style="border: 1px solid"></p>
+    <script>
+      const icerik = document.getElementById("mrbdny"); // sayfadki id si mrbdny olan elementi seçtik.
+      document.getElementById("JsIdSeciciTest").innerText =
+        "mrbdny elementinden gelen içerik :" + icerik.innerText;
+    </script>
+
+    <hr />
+
+    <h2>Elementleri Etiket Adına(Tag Name) Göre Seçme</h2>
+    <div>div içeriği</div>
+    <div id="bosDiv" style="border: 1px solid"></div>
+    <script>
+      var divler = document.getElementsByTagName("div"); // sayfadaki div elementlerini seçtik
+      document.getElementById("bosDiv").innerText =
+        "ilk div elementinden gelen içerik :" + divler[0].innerText;
+    </script>
+
+    <hr />
+
+    <h2 class="sinifSeciciBaslik">
+      Elementleri Sınıf Adına(Class Name) Adına Göre Seçme
+    </h2>
+    <div id="sinifSecici" style="border: 1px solid"></div>
+    <script>
+      var sinifaGoreSec = document.getElementsByClassName("sinifSeciciBaslik");
+      document.getElementById("sinifSecici").innerText =
+        sinifaGoreSec[0].innerText;
+    </script>
+
+    <hr />
+
+    <h2 class="sorguSecici">Elementleri Css Sorgularına Göre Seçme</h2>
+    <p id="sorguSecici" style="border: 1px solid"></p>
+    <script>
+      var sorguSecici = document.querySelectorAll("h2.sorguSecici"); // querSelectorAll metodu sayfada birden çok element seçer, elementleri dizi formatına getirir.
+      document.getElementById("sorguSecici").innerText =
+        sorguSecici[0].innerText;
+    </script>
+
+    <hr />
+
+    <h3>Tek Eleman Seçici</h3>
+    <p id="İlkElemanicerigi"></p>
+    <script>
+      var İlkEleman = document.querySelector("p"); // querySelector metdou sayfada tek eleman seçer ve css sorgusu kullanarak seçim yapmamızı sağlar.
+      document.querySelector("#İlkElamanicerigi").innerHTML =
+        İlkEleman.innerHTML;
+      var tarih = new Date(); // tarih işlemleri için
+      document.querySelector("#İlkElamanicerigi").innerHTML +=
+        "<hr>Tarih :" + tarih;
+      document.querySelector("#İlkElamanicerigi").innerHTML +=
+        "<hr>Gün(getDate) :" + tarih.getDate();
+      document.querySelector("#İlkElamanicerigi").innerHTML +=
+        "<hr>Ay(getMonth) :" + (tarih.getMonth() + 1);
+      document.querySelector("#İlkElamanicerigi").innerHTML +=
+        "<hr>Yıl(getFullYear) :" + tarih.getFullYear();
+    </script>
+  </body>
+</html>

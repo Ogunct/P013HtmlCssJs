@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Olaylar</title>
+  </head>
+  <body>
+    <h1>Js Olaylar</h1>
+    <p>
+      Javascript ile ekran üzerine yapılan tıklama, çift tıklama, mouse u
+      hareket ettirme ve tuşa basma vb gibi tüm olaylar yakalanarak
+      kullanılabilmektedir.
+    </p>
+    <h2>OnClick Olayı</h2>
+    <script>
+      function RenkDegistir(arkaplanRengi, yaziRengi) {
+        document.bgColor = arkaplanRengi;
+        document.fgColor = yaziRengi;
+      }
+    </script>
+    <input
+      type="button"
+      value="Kırmızı Beyaz"
+      onclick="RenkDegistir('red','white')"
+    />
+    <input
+      type="button"
+      value="Beyaz Siyah"
+      onclick="RenkDegistir('white','black')"
+    />
+    <input
+      type="button"
+      value="Mavi Sarı"
+      onclick="RenkDegistir('blue','yellow')"
+    />
+
+    <h2>OnClick Olayı Örnek2 Cinsiyet Seçme</h2>
+    <form name="Cinsiyet">
+      <input type="radio" name="cins" id="cins1" value="kadın" />
+      Kadın
+      <input type="radio" name="cins" id="cins2" value="erkek" />
+      Erkek
+      <input type="button" value="Seç" onclick="Goster()" />
+    </form>
+
+    <script>
+      function Goster() {
+        var secilenCinsiyet = "";
+        if (document.cinsiyet.cins[0].checked) {
+          secilenCinsiyet = "Kadın";
+        }
+        if (document.cinsiyet.cins[1].checked) {
+          secilenCinsiyet = "Erkek";
+        }
+        alert("Seçilen Cinsiyet:" + secilenCinsiyet);
+      }
+    </script>
+    <a href="https://www.google.com.tr/" target="_blank">Google'a Git</a>
+    <hr />
+    <h3>Örnek3 Onclick Confirm Olayı</h3>
+    <script>
+      function kontrol() {
+        str = "Bunu mu demek istediniz? Google'a git";
+        if (confirm(str)) {
+          // Confirm fonksiyonu kullanıcıya tamam veya iptal seçenekleri sunar.
+          location.href = "https://www.google.com.tr/";
+        }
+      }
+      function urunsil() {
+        if (confirm("Üürnü silmek istiyor musunuz?")) {
+          alert("ürün silindi!");
+        }
+      }
+    </script>
+    <input type="button" value="Google'a Git" onclick="kontrol()" />
+    <input type="button" value="Ürünü Sil" onclick="urunsil()" />
+    <hr />
+
+    <h3>OnMouseOver Olayı</h3>
+    <p>Ekrandaki herhangi bir element üzerine geldiğimizde çalışıyor</p>
+    <a
+      href="https://www.google.com.tr/"
+      target="_blank"
+      onmouseover="alert('OnMouseOver Çalıştı')"
+      >Google'a Git</a
+    >
+    <hr />
+    <h3>On Focus Olayı</h3>
+    <input
+      type="text"
+      name="fokus"
+      id="fokus"
+      value="Buraya Tıkla"
+      onfocus="this.value='Fokuslandık'"
+    />
+    <hr />
+    <h3>On Blur Olayı</h3>
+    <input
+      type="text"
+      name="fokus"
+      id="fokus"
+      value="Buraya Tıkla"
+      onfocus="this.value='Fokuslandık'"
+      onblur="this.value='Güle Güle'"
+    />
+    <hr />
+    <h3>On Change Olayı</h3>
+    <script>
+      function sec(s) {
+        return s.options[s.selectedIndex].value;
+      }
+    </script>
+    <form name="list">
+      <select name="liste" id="liste" onchange="location=sec(this)">
+        <option value="#">Bir Arama Motoru Seçiniz</option>
+        <option value="https://www.google.com.tr/">Google</option>
+        <option value="https://www.yahoo.com./">Yahoo</option>
+        <option value="https://www.yandex.com.tr/">Yandex</option>
+      </select>
+    </form>
+    <hr />
+    <h2 id="olayBaslik">AddEventListener Metodu</h2>
+    <p id="olayDinleme" class="brd"></p>
+
+    <p>
+      Javascript addEventListener metodu ile sayfadaki olayları dinleyebiliriz.
+    </p>
+
+    <script>
+      function ornekFunction() {
+        document.getElementById("olayDinleme").innerHTML =
+          "addEventListener çalıştır";
+      }
+      //addEventListener ekleme
+      document
+        .getElementById("olayDinleme")
+        .addEventListener("click", ornekFunction);
+
+      function removeHandler() {
+        document
+          .getElementById("olayDinleme")
+          .removeEventListener("click", ornekFunction);
+      }
+    </script>
+
+    <button onclick="removeHandler">removeEventListener</button>
+  </body>
+</html>
